@@ -138,7 +138,7 @@ Furniture.prototype.getInfo = function () {
  * @desc - класс OfficeFurniture наследник класса Furniture
  * @param {string} name - имя мебели для офиса
  * @param {number} price - цена мебели для офиса
- * @param {boolean} hasCompTable - имеет стол для компьютера или нет
+ * @param {boolean} hasDeskForComp - имеет стол для компьютера или нет
  */
 function OfficeFurniture(name, price, hasDeskForComp) {
     Furniture.apply(this, arguments);
@@ -216,7 +216,7 @@ User.prototype.getInfo = function() { return this.name + ' ' + this.dateReg };
  * @description - класс Admin наследник класса User
  * @param {string} name - имя пользователя 
  * @param {data} dateReg - дата регистрации
- * @param {} superAdmin 
+ * @param {boolean} superAdmin 
  */
 
 const hiddenSuperAdmin = Symbol();
@@ -244,8 +244,8 @@ class Guest extends User {
     getInfo() { return super.getInfo() + ' ' + this.validDate.toDateString(); }
 }
 
-const admin = new Admin ('Olya', '14.08.2014', true);
-const guest = new Guest ('Vasya', 'Dec 25, 1995');
+const admin = new Admin ('Olya', 'Jun 06, 2018', true);
+const guest = new Guest ('Vasya', 'Dec 25, 2018');
 
 console.log(admin.getInfo());
 console.log(guest.getInfo());
